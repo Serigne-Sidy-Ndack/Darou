@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous</title>
+    
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #4CAF50; /* Couleur de fond */
+            background-image: url('Project/logo.jpg'); /* Image de fond */
+            background-size: cover; /* Redimensionner l'image pour couvrir l'ensemble de l'élément */
+            background-position: center; /* Positionner l'image au centre */
+            color: rgb(17, 15, 15); /* Couleur du texte */
+        }
+        
+         {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 150px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Contactez-nous</h2>
+    <form id="contactForm" action="traitement_formulaire.php" method="post">
+        <label for="objet">Objet :</label>
+        <input type="text" id="objet" name="objet" required>
+        
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <input type="submit" value="Envoyer">
+    </form>
+    <p id="confirmationMessage" style="display: none;">Message envoyé avec succès.</p>
+</div>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Empêche l'envoi du formulaire par défaut
+
+        // Afficher le message de confirmation
+        document.getElementById("confirmationMessage").style.display = "block";
+
+        // Rediriger vers la page d'accueil après un délai de 3 secondes (3000 millisecondes)
+        setTimeout(function() {
+            window.location.href = "accueil.html";
+        }, 3000);
+    });
+</script>
+
+</body>
+</html>
